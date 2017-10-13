@@ -1,0 +1,27 @@
+{
+  "name": "meliorator/yii2-helpers",
+  "description": "Yii-Framework small helpers",
+  "type": "yii2-extension",
+  "keywords": ["yii2","extension"," helpers"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Laba Mykola",
+      "email": "laba2005@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "meliorator\\helpers\\": ""
+    }
+  },
+  "repositories":[
+    {
+      "type": "git",
+      "url": "https://github.com/meliorator/yii2-helpers.git"
+    }
+  ]
+}
