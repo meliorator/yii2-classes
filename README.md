@@ -1,1 +1,1 @@
-# yii2-classes
+My small helper classes for yii2
