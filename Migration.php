@@ -9,13 +9,13 @@
 namespace meliorator\helpers;
 
 
-class Migrate extends yii\db\Migration\Migrate {
+class Migration extends yii\db\Migration {
 
     protected function getTableOptions(){
         return 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
     }
 
-    protected function fillData($tableName, $data = []){
+    protected function fillData($tableName, array $data = []){
         foreach ($data as $row) {
             if(is_array($row)){
                 $this->insert($tableName, $row);

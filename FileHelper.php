@@ -13,6 +13,34 @@ namespace meliorator\helpers;
  *
  * @package meliorator\helpers
  */
-class FileHelper {
+class FileHelper extends \yii\helpers\FileHelper {
+    /**
+     * Full file name without path
+     * @param $fileName
+     *
+     * @return string
+     */
+    public static function fileName($fileName){
+        return pathinfo($fileName, PATHINFO_BASENAME);
+    }
 
+    /**
+     * File name without extension
+     * @param $fileName
+     *
+     * @return string
+     */
+    public static function fileBaseName($fileName){
+        return pathinfo($fileName, PATHINFO_FILENAME);
+
+    }
+
+    /**
+     * @param $fileName
+     *
+     * @return string
+     */
+    public static function fileExtension($fileName){
+        return pathinfo($fileName, PATHINFO_EXTENSION);
+    }
 }
