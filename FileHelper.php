@@ -8,7 +8,11 @@
 
 namespace meliorator\helpers;
 
-
+/**
+ * Class FileHelper
+ *
+ * @package meliorator\helpers
+ */
 class FileHelper {
 
 }
