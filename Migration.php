@@ -9,7 +9,7 @@
 namespace meliorator\helpers;
 
 
-class Migration extends yii\db\Migration {
+class Migration extends \yii\db\Migration {
 
     protected function getTableOptions(){
         return 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
