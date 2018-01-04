@@ -11,32 +11,26 @@ echo "<?php\n";
 use \meliorator\helpers\Migration;
 use yii\db\mysql\Schema;
 
-class <?= $className ?> extends Migration
-{
-public function up()
-{
-$this->createTable('', [
-'id' => Schema::TYPE_PK,
-...
-]);
-
+class <?= $className ?> extends Migration {
+public function up() {
+    $this->createTable('', [
+        'id' => $this->primaryKey(),
+//      'name' => $this->string(255)->notNull()->unique(),
+    ]);
 }
 
-public function down()
-{
-echo "<?= $className ?> cannot be reverted.\n";
-$this->dropTable('');
-return false;
+public function down() {
+    echo "<?= $className ?> cannot be reverted.\n";
+    $this->dropTable('');
+    return false;
 }
 
 /*
 // Use safeUp/safeDown to run migration code within a transaction
-public function safeUp()
-{
+public function safeUp() {
 }
 
-public function safeDown()
-{
+public function safeDown() {
 }
 */
 }
