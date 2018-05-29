@@ -50,4 +50,9 @@ class LocalizeBehavior extends Behavior {
             'httpOnly' => false
         ]));
     }
+    
+    public function t($message){
+        \Yii::$app->language = $this->getLangId();//$langSystem;
+        return \Yii::t('app', $message);
+    }
 }
