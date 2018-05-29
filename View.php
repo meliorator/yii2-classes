@@ -6,7 +6,7 @@
  * @contacts: me@laba.net.ua
  */
 
-namespace app\components;
+namespace meliorator\helpers;
 
 use yii\helpers\Html;
 
