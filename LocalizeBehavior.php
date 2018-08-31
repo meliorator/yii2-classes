@@ -15,31 +15,32 @@ class LocalizeBehavior extends Behavior {
     protected $langCookieName = 'lang';
 
     public function getLangId() {
-        $langId = null;
-        $langs = \Yii::$app->params['langs'];
-        if ($_COOKIE) {
-            if (isset($_COOKIE['tmplang'])) {
-                if ($_COOKIE['tmplang'] != '') {
-                    if (array_key_exists($_COOKIE['tmplang'], $langs)) {
-                        $langId = $_COOKIE['tmplang'];
-                        $this->setLangId($langId);
-                    }
-                    setcookie('tmplang', null, 0, '/');
-//                    $_COOKIE['tmplang'] = '';
-                }
-            }
-        }
-
-        //Если не было запроса на изменение языка
-        if (!$langId) {
-            $langId = \Yii::$app->request->cookies->getValue($this->langCookieName);
-        }
-
-        if (!$langId) {
-            $langId = \Yii::$app->params['defaultLangId'];
-            $this->setLangId($langId);
-        }
-        return $langId;
+        return \Yii::$app->language;
+//        $langId = null;
+//        $langs = \Yii::$app->params['langs'];
+//        if ($_COOKIE) {
+//            if (isset($_COOKIE['tmplang'])) {
+//                if ($_COOKIE['tmplang'] != '') {
+//                    if (array_key_exists($_COOKIE['tmplang'], $langs)) {
+//                        $langId = $_COOKIE['tmplang'];
+//                        $this->setLangId($langId);
+//                    }
+//                    setcookie('tmplang', null, 0, '/');
+////                    $_COOKIE['tmplang'] = '';
+//                }
+//            }
+//        }
+//
+//        //Если не было запроса на изменение языка
+//        if (!$langId) {
+//            $langId = \Yii::$app->request->cookies->getValue($this->langCookieName);
+//        }
+//
+//        if (!$langId) {
+//            $langId = \Yii::$app->params['defaultLangId'];
+//            $this->setLangId($langId);
+//        }
+//        return $langId;
     }
 
     public function setLangId($langId) {
@@ -52,7 +53,7 @@ class LocalizeBehavior extends Behavior {
     }
     
     public function t($message){
-        \Yii::$app->language = $this->getLangId();//$langSystem;
+//        \Yii::$app->language = $this->getLangId();//$langSystem;
         return \Yii::t('app', $message);
     }
 }
