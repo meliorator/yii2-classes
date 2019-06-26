@@ -12,7 +12,7 @@ namespace meliorator\helpers;
 class Migration extends \yii\db\Migration {
 
     protected function getTableOptions(){
-        return 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+        return 'CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ENGINE=InnoDB';
     }
 
     protected function fillData($tableName, array $data = []){
